@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+    display: flex;
+    justify-content: center;
+    background-color: wheat;
+    height: 70vh;
+    min-width: 80%;
+
+   
+}
+.carde {
+    height: 80vh;
+    background-color: rgb(220, 230, 226);
+    min-width: 30px;
+    text-align: center;
+    box-shadow: 1.6px black;
+    
+    border-Width: '2px';
+    border: solid;
+          padding: 5px;
+}
+input{
+    border-radius: 20px;
+    width: 10%;
+    height: 5vh;
+margin: 20px;
+text-align: center;
+}
