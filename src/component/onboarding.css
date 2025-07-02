@@ -1,75 +1,53 @@
-body {
+onboarding-container {
     font-family: Arial, sans-serif;
-    background-color: #ccc;
-    margin: 0;
-    padding: 40px 10px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .container {
-    width: 100%;
+    padding: 20px;
     max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   
-  .card {
-    background: white;
-    border-radius: 30px 30px 0 0;
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 20px;
-    font-weight: bold;
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
     margin-bottom: 10px;
   }
   
-  .subtitle {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 25px;
+  .icons svg {
+    margin-left: 10px;
   }
   
-  .input-wrapper {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 999px;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-  }
-  
-  .icon {
-    margin-right: 10px;
+  .navbar {
+    font-weight: bold;
     font-size: 18px;
+    margin-bottom: 20px;
+
   }
   
-  .select {
-    border: none;
+  .content {
+    text-align: center;
+  }
+  
+  .illustration {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .continue-btn {
+    padding: 12px 20px;
     font-size: 16px;
-    width: 100%;
-    outline: none;
-    background: transparent;
-  }
-  
-  .input {
     border: none;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    background: transparent;
-  }
-  
-  .btn {
-    margin-top: 20px;
-    width: 100%;
-    padding: 14px;
-    background-color: #000;
+    background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 999px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
   }
-  

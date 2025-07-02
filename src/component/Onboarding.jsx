@@ -1,43 +1,43 @@
-import React, { useState } from "react";
-import './onboarding.css'
+import React from 'react';
+import { FaSignal, FaBatteryFull } from 'react-icons/fa';
+import illustration from './illustration.png'
 
-export default function Onboarding() {
-  const [phone, setPhone] = useState("");
+import './onboarding.css';
+// import { Link, Outlet } from 'react-router-dom';
 
-  const handleContinue = () => {
-    if (phone.trim()) {
-      alert(`Phone: +62 ${phone}`);
-    } else {
-      alert("Please enter your phone number");
-    }
-  };
-
+function Onboarding() {
   return (
-    <div className="card">
-      <h2 className="title">Enter your phone number</h2>
-      <p className="subtitle">Please confirm your region and enter your phone number</p>
-
-      <div className="input-wrapper">
-        <span className="icon">🌐</span>
-        <select className="select">
-          <option value="+62">Indonesia (+62)</option>
-        </select>
+    <div className="onboarding-container">
+      <div className="status-bar">
+        <div>9:41</div>
+        <div className="icons">
+          <FaSignal />
+          <FaBatteryFull />
+        </div>
       </div>
 
-      <div className="input-wrapper">
-        <span className="icon">📞</span>
-        <input
-          className="input"
-          type="tel"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          placeholder="Phone number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+      {/* <div className="navbar">Onboarding</div> */}
+
+      <div className="content">
+        <img
+          src={illustration}
+          alt="Illustration"
+          className="illustration"
         />
+        <h1>What's up</h1>
+        <p className="description">
+          Let's talk with your friends and family<br />
+          whenever and wherever
+        </p>
+        <button className="continue-btn">
+        Continue with phone
+        {/* <Link to="/numero">Continue with phone</Link> */}
+        </button>
       </div>
 
-      <button className="btn" onClick={handleContinue}>Continue</button>
+      {/* <Outlet /> */}
     </div>
   );
 }
+
+export default Onboarding;

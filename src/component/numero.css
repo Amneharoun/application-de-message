@@ -1,0 +1,71 @@
+
+  .card {
+    background: white;
+    border-radius: 30px 30px 0 0;
+    padding: 10px;
+    text-align: center;
+    /* Approximate iPhone 8 Plus height (adjust as needed) */
+   background-color: #fffefe;
+   border-radius: 30px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   /* overflow: hidden; */
+   display: flex;
+   flex-direction: column;
+   position: relative; /* For the floating action button */
+  
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
+  }
+  
+  .subtitle {
+    color: #777;
+    font-size: 14px;
+    /* margin-bottom: 25px; */
+  }
+  
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 10px 15px;
+    /* margin-bottom: 15px; */
+  }
+  
+  .icon {
+    /* margin-right: 10px; */
+    font-size: 18px;
+  }
+  
+  .select {
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    background: transparent;
+  }
+  
+  .input {
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    background: transparent;
+  }
+  
+  .btn {
+    /* margin-top: 20px; */
+    width: 100%;
+    padding: 14px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

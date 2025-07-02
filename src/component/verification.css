@@ -1,30 +1,66 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    
-    display: flex;
-    justify-content: center;
-    background-color: wheat;
-    height: 70vh;
-    min-width: 80%;
 
-   
-}
 .carde {
-    height: 80vh;
+    /* height: 50vh;
     background-color: rgb(220, 230, 226);
-    min-width: 30px;
-    text-align: center;
+   
     box-shadow: 1.6px black;
-    
+    text-align: center;
+    align-items: center;
     border-Width: '2px';
     border: solid;
-          padding: 5px;
+    padding: 70px;
+    margin-top: 100px;
+    width: 100vw; */
+     /* Approximate iPhone 8 Plus width */
+    /* Approximate iPhone 8 Plus height (adjust as needed) */
+   background-color: #fffefe;
+   border-radius: 30px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   /* overflow: hidden; */
+   display: flex;
+   flex-direction: column;
+   position: relative; /* For the floating action button */
+   text-align: center;
 }
 input{
     border-radius: 20px;
     width: 10%;
     height: 5vh;
-margin: 20px;
+
 text-align: center;
 }
+
+  
+  .label {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* .inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  } */
+  
+  .inputs input {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .resend {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+ 

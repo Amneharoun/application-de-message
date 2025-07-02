@@ -1,36 +1,49 @@
-import React, { useState } from "react";
-import './verification.css'
+import React, { useState, useRef } from "react";
+import './verification.css';
 
 export default function Verification() {
-  const [code, setcode] = useState("");
-  const handlechange = (event) => {
-    setcode(event.target.value);
-    const filteredValue = value.replace(/[^0-9]/g, '').slice(0, 4);
-    setcode(filteredValue);
+  const [code, setCode] = useState(["", "", "", ""]);
+  const inputsRef = useRef([]);
+
+  const handleChange = (e, index) => {
+    const value = e.target.value.replace(/[^0-9]/g, "").slice(0, 1);
+    const newCode = [...code];
+    newCode[index] = value;
+    setCode(newCode);
+
+    if (value && index < 3) {
+      inputsRef.current[index + 1].focus();
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !code[index] && index > 0) {
+      inputsRef.current[index - 1].focus();
+    }
   };
 
   return (
     <div className="carde">
-      <label htmlFor="code-input" className="label"> Entrer code:</label>
-      <p className="subtitle">we've sent the code via SMS to +62 999 9999 000</p>
-      <div className="espoir">
-        <div className="inputs">
-          <input
-            type="text"
-            id="code-input"
-            value={code}
-            onChange={handlechange}
-            maxLength="1"
-            placeholder=""
-          />
-          <input />
-          <input />
-          <input />
-        </div>
+      <label className="label">Entrer code:</label>
+      <p className="subtitle">We've sent the code via SMS to +62 999 9999 000</p>
 
-        <p>Didn't get the code? <strong>Resent code</strong></p>
+      <div className="inputs">
+        {code.map((digit, index) => (
+          <input
+            key={index}
+            type="text"
+            value={digit}
+            onChange={(e) => handleChange(e, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            maxLength="1"
+            ref={(el) => (inputsRef.current[index] = el)}
+          />
+        ))}
       </div>
+
+      <p className="resend">
+        Didn't get the code? <strong>Resent code</strong>
+      </p>
     </div>
   );
-
 }
