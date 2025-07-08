@@ -1,66 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
+/* Carde = conteneur plein écran */
 .carde {
-    /* height: 50vh;
-    background-color: rgb(220, 230, 226);
-   
-    box-shadow: 1.6px black;
-    text-align: center;
-    align-items: center;
-    border-Width: '2px';
-    border: solid;
-    padding: 70px;
-    margin-top: 100px;
-    width: 100vw; */
-     /* Approximate iPhone 8 Plus width */
-    /* Approximate iPhone 8 Plus height (adjust as needed) */
-   background-color: #fffefe;
-   border-radius: 30px;
-   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-   /* overflow: hidden; */
-   display: flex;
-   flex-direction: column;
-   position: relative; /* For the floating action button */
-   text-align: center;
-}
-input{
-    border-radius: 20px;
-    width: 10%;
-    height: 5vh;
-
-text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fffefe;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrer verticalement */
+  text-align: center;
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
 }
 
-  
-  .label {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .subtitle {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 10px 0;
-  }
-  
-  /* .inputs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-  } */
-  
-  .inputs input {
-    width: 40px;
-    height: 50px;
-    text-align: center;
-    font-size: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  .resend {
-    font-size: 0.9rem;
-    color: #444;
-  }
-  
- 
+/* Input général */
+input {
+  border-radius: 20px;
+  width: 50%;
+  max-width: 300px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Label */
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Inputs group (e.g., OTP or PIN codes) */
+.inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.inputs input {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Resend link/text */
+.resend {
+  font-size: 0.9rem;
+  color: #444;
+}

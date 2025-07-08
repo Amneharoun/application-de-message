@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './numero.css'
+import { Link } from "react-router-dom";
 
 export default function Onboarding() {
   const [phone, setPhone] = useState("");
@@ -37,7 +38,11 @@ export default function Onboarding() {
         />
       </div>
 
-      <button className="btn" onClick={handleContinue}>Continue</button>
+      <button className="btn" onClick={handleContinue}>
+      <Link to="/verification" className="nav-item">
+            <span> Continue</span>
+          </Link>
+      </button>
     </div>
   );
 }

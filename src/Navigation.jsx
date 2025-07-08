@@ -27,6 +27,9 @@ const NavigationMenu = () => {
             <i className="fas fa-user"></i>
             <span>Profile</span>
           </Link>
+
+          
+          
         {/* </div> */}
       </nav>
       {/* <nav className="navbar">

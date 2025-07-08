@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import './verification.css';
+import { Link } from "react-router-dom";
 
 export default function Verification() {
   const [code, setCode] = useState(["", "", "", ""]);
@@ -44,6 +45,15 @@ export default function Verification() {
       <p className="resend">
         Didn't get the code? <strong>Resent code</strong>
       </p>
+      <div>
+        {/* <button onClick={handleClick}>Validé</button> */}
+        <button>
+          <Link to="/namecreation" className="nav-item">
+            <span>Validé</span>
+          </Link>
+        </button>
+      </div>
     </div>
+
   );
 }

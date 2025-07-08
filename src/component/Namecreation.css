@@ -1,0 +1,419 @@
+
+
+.name-creation-container {
+  width: 100vw;           /* largeur de l'écran */
+  height: 100vh;          /* hauteur de l'écran */
+  margin: 0;              /* pas de marge externe */
+  padding: 0;
+  background: #fff;
+  border-radius: 0;       /* tu peux garder 18px si tu veux arrondir */
+  box-shadow: none;       /* optionnel : supprime l'ombre */
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* display: flex; */
+  flex-direction: column;
+}
+
+/* ========================================
+   Barre de statut
+======================================== */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #f5f5f7;
+  font-size: 14px;
+}
+
+.time {
+  font-size: var(--nc-font-size-lg);
+  font-weight: 600;
+  color: var(--nc-black);
+  letter-spacing: -0.02em;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signal-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.signal-dot {
+  width: 5px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.signal-dot.active {
+  background: #222;
+}
+
+.wifi-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+}
+
+.battery-icon {
+  width: 18px;
+  height: 8px;
+  border: 1.5px solid #222;
+  border-radius: 2px;
+  margin-left: 6px;
+}
+
+/* ========================================
+   Indicateur de progression
+======================================== */
+.progress-indicator {
+  text-align: center;
+  margin: 16px;
+  color: #888;
+  font-size: 13px;
+}
+
+.progress-indicator {
+  text-align: right;
+  padding: var(--nc-spacing-2) var(--nc-spacing-6);
+  color: var(--nc-gray-400);
+  font-size: var(--nc-font-size-sm);
+  font-weight: 500;
+}
+
+/* ========================================
+   Contenu principal
+======================================== */
+.main-content {
+  padding: 0 24px 24px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--nc-spacing-6) var(--nc-spacing-8);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Section d'en-tête
+======================================== */
+.header-section {
+  text-align: center;
+  margin: 30px 0 18px 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+.subtitle {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #888;
+ 
+}
+
+/* ========================================
+   Section de saisie
+======================================== */
+.input-section {
+  margin: 24px 0 16px 0;
+  width: 100%;
+  height: 50px;
+  max-width: 340px;
+  margin-left: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 12px;
+  
+
+}
+
+.input-container {
+  display: flex;
+  margin: 24px 0 16px 0;
+  width: 100%;
+  max-width: 350px;
+  align-items: center;
+  background: #f5f5f7;
+  border-radius: 20px;
+  padding: 8px 22px;
+  border: 1px solid #ddd;
+  justify-content: center;
+
+}
+
+.input-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: #888;
+  
+}
+
+.name-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  color: #222;
+  
+}
+
+/* ========================================
+   Bouton Next
+======================================== */
+.next-button {
+  margin: 24px 0 16px 0;
+  width: 90%;
+  max-width: 350px;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #a2aeb3;
+  transition: background 0.2s;
+  margin-left: 550px;
+}
+
+.next-button.disabled,
+.next-button:disabled {
+  background: #000000;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Clavier virtuel
+======================================== */
+.virtual-keyboard {
+  margin-top: 80px;
+  background: #f5f5f7;
+  padding: 16px 8px 8px 8px;
+  border-top: 1px solid #eee;
+  border-radius: 0 0;
+}
+
+.keyboard-row,
+.keyboard-bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.keyboard-key {
+  min-width: 32px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 8px;
+  background: #e3e3e3;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  outline: none;
+}
+
+.keyboard-key:active {
+  background: #d0d0d0;
+}
+
+/* Touches spéciales */
+.backspace-key {
+  min-width: 40px;
+  background: #ffb4b4;
+}
+
+.special-key {
+  background: #d0e6ff;
+  color: #0078d4;
+}
+
+.space-key {
+  flex: 1;
+  min-width: 80px;
+  background: #e3e3e3;
+}
+
+/* ========================================
+   Footer du clavier
+======================================== */
+.keyboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.emoji-button,
+.mic-button {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: background 0.15s;
+}
+
+.emoji-button:active,
+.mic-button:active {
+  background: #f0f0f0;
+}
+
+.home-indicator {
+  width: 40px;
+  height: 5px;
+  background: #ccc;
+  border-radius: 3px;
+  margin: 0 12px;
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+@media (max-width: 480px) {
+  .keyboard-key {
+    min-width: 28px;
+    height: 44px;
+    padding: var(--nc-spacing-2);
+    font-size: var(--nc-font-size-base);
+  }
+  
+  .title {
+    font-size: var(--nc-font-size-3xl);
+  }
+  
+  .subtitle {
+    font-size: var(--nc-font-size-base);
+  }
+  
+  .main-content {
+    padding: 0 var(--nc-spacing-4) var(--nc-spacing-6);
+  }
+  
+  .status-bar {
+    padding: var(--nc-spacing-2) var(--nc-spacing-4);
+  }
+}
+
+@media (max-width: 375px) {
+  .keyboard-key {
+    min-width: 26px;
+    height: 42px;
+    font-size: var(--nc-font-size-sm);
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .name-input {
+    font-size: var(--nc-font-size-base);
+  }
+}
+
+/* ========================================
+   Mode sombre (optionnel)
+======================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nc-primary-bg: #111827;
+    --nc-white: #1f2937;
+    --nc-black: #ffffff;
+    --nc-gray-900: #f9fafb;
+    --nc-gray-800: #f3f4f6;
+    --nc-gray-700: #e5e7eb;
+    --nc-gray-600: #d1d5db;
+    --nc-gray-500: #9ca3af;
+    --nc-gray-400: #6b7280;
+    --nc-gray-300: #4b5563;
+    --nc-gray-200: #374151;
+    --nc-gray-100: #1f2937;
+    --nc-gray-50: #111827;
+  }
+}
+
+/* ========================================
+   États d'accessibilité
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Focus visible pour l'accessibilité
+======================================== */
+.keyboard-key:focus-visible,
+.next-button:focus-visible,
+.name-input:focus-visible {
+  outline: 2px solid var(--nc-blue-500);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   États de chargement (optionnel)
+======================================== */
+.next-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.next-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--nc-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

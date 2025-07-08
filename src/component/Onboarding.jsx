@@ -3,6 +3,7 @@ import { FaSignal, FaBatteryFull } from 'react-icons/fa';
 import illustration from './illustration.png'
 
 import './onboarding.css';
+import { Link } from 'react-router-dom';
 // import { Link, Outlet } from 'react-router-dom';
 
 function Onboarding() {
@@ -30,7 +31,10 @@ function Onboarding() {
           whenever and wherever
         </p>
         <button className="continue-btn">
-        Continue with phone
+        <Link to="/numero" className="nav-item">
+            <span> Continue with phone</span>
+          </Link>
+        
         {/* <Link to="/numero">Continue with phone</Link> */}
         </button>
       </div>

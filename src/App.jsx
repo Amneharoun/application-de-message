@@ -5,6 +5,8 @@ import Verification from "./component/Verification";
 import Contact from "./component/Contact";
 import Onboarding from "./component/Onboarding";
 import Profile from "./component/Profile";
+import Chatinterface from "./component/Chatinterface";
+import Namecreation from "./component/Namecreation";
 
 
 import "./App.css";
@@ -32,6 +34,8 @@ const App = () => {
             <Route path="/verification" element={<Verification />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/chatinterface" element={<Chatinterface />} />
+            <Route path="/namecreation" element={<Namecreation />} />
           {/* </Route> */}
         </Routes>
       </BrowserRouter>
